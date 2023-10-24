@@ -47,7 +47,7 @@
 
 #shipInfoContainer{
     display: inline-block;
-    background-image: url("ship info/shipdInformationBar.png");
+    background-image: url("shipInfo/shipdInformationBar.png");
     background-size: 100%;
     width: 193px;
     height: 125px;

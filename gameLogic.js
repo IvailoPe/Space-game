@@ -83,7 +83,7 @@ function addEnemeyShips() {
     let positionOnScreen = Math.floor(Math.random() * window.innerWidth - 150)
     lastEnemyShip = new Date().getTime() / 1000
     let enemyShip = document.createElement("img")
-    enemyShip.src = "/ship pictures/enemyShip.png"
+    enemyShip.src = "/shipPictures/enemyShip.png"
     enemyShip.style.position = "absolute"
     enemyShip.style.left = positionOnScreen + "px"
     enemyShip.style.top = 0 + "px"
@@ -100,7 +100,7 @@ function addMeteors() {
     let positionOnScreen = Math.floor(Math.random() * window.innerWidth - 150)
     lastMeteor = new Date().getTime() / 1000
     let meteor = document.createElement("img")
-    meteor.src = "/space obsticals/meteor.png"
+    meteor.src = "/spaceObsticals/meteor.png"
     meteor.style.position = "absolute"
     meteor.style.left = positionOnScreen + "px"
     meteor.style.top = 0 + "px"
@@ -121,13 +121,13 @@ function runningGame(timeSpan) {
   addMeteors()
   addEnemeyShips()
   if (movement.a) {
-    ship.src = "/ship pictures/shipLeftTurn.png"
+    ship.src = "/shipPictures/shipLeftTurn.png"
   }
   else if (movement.d) {
-    ship.src = "/ship pictures/shipRightTurn.png"
+    ship.src = "/shipPictures/shipRightTurn.png"
   }
   else {
-    ship.src = "/ship pictures/ship.png"
+    ship.src = "/shipPictures/ship.png"
   }
 
   if (enemyShips.length) {
@@ -154,7 +154,7 @@ function runningGame(timeSpan) {
       if (isTimeToFire) {
         lastRedLaser = new Date().getTime() / 1000
         let redLaser = document.createElement("img")
-        redLaser.src = "lasers pictures/redLaser.png"
+        redLaser.src = "lasersPictures/redLaser.png"
         redLaser.style.position = "absolute"
         redLaser.style.top = "113px"
         redLaser.style.left = cordinatesOfEnemyShip.left + 47 + "px"
@@ -181,10 +181,10 @@ function runningGame(timeSpan) {
           let currecntPic = window.getComputedStyle(shipHealthInfo, null).backgroundImage.split(`"`)[1].split("/")[4]
 
           if (currecntPic === "shipdInformationBar.png") {
-            shipHealthInfo.style.backgroundImage = `url('ship info/shipInformationMinus1Health.png')`
+            shipHealthInfo.style.backgroundImage = `url('shipInfo/shipInformationMinus1Health.png')`
           }
           else if (currecntPic === "shipInformationMinus1Health.png") {
-            shipHealthInfo.style.backgroundImage = `url('ship info/shipInformationMinus2Health.png')`
+            shipHealthInfo.style.backgroundImage = `url('shipInfo/shipInformationMinus2Health.png')`
           }
           else if (currecntPic === "shipInformationMinus2Health.png") {
             document.querySelector("#endScreen").style.display = "inline-block"
@@ -221,14 +221,14 @@ function runningGame(timeSpan) {
           if (willMove > 6) {
             if (leftOrRight && cordinatesOfEnemyShip.left < +window.innerWidth - 100) {
               ship.enemyShip.style.left = cordinatesOfEnemyShip.left + 15 + "px"
-              ship.enemyShip.src = `ship pictures/enemyShipTurningRight.png`
+              ship.enemyShip.src = `shipPictures/enemyShipTurningRight.png`
             }
             else if (cordinatesOfEnemyShip.left > 0) {
               ship.enemyShip.style.left = cordinatesOfEnemyShip.left - 15 + "px"
-              ship.enemyShip.src = `ship pictures/enemyShipTurningLeft.png`
+              ship.enemyShip.src = `shipPictures/enemyShipTurningLeft.png`
             }
           }
-          ship.enemyShip.src = `ship pictures/enemyShip.png`
+          ship.enemyShip.src = `shipPictures/enemyShip.png`
           if (cordinatesOfCurrentLaser.top >= cordinatesOfEnemyShip.top && cordinatesOfCurrentLaser.bottom <= cordinatesOfEnemyShip.bottom) {
             ship.health--
             laser.remove()
@@ -283,8 +283,8 @@ function runningGame(timeSpan) {
 
     let blueLaser = document.createElement("img")
     let blueLaser2 = document.createElement("img")
-    blueLaser.src = "/lasers pictures/blueLaser.png"
-    blueLaser2.src = "/lasers pictures/blueLaser.png"
+    blueLaser.src = "/lasersPictures/blueLaser.png"
+    blueLaser2.src = "/lasersPictures/blueLaser.png"
 
     document.body.appendChild(blueLaser)
     document.body.appendChild(blueLaser2)
