@@ -1,0 +1,76 @@
+#bottomInfoContainer{
+    width: 1920px;
+    height: 130px;
+    position: absolute;
+    top: 801px;
+    background-color: black;
+}
+
+[alt="shipView"]{
+    margin: 0px 9.7px 0px 9.7px;
+}
+
+#endScreen button{
+    position: absolute;
+    left:119px;
+    background-color: greenyellow;
+    border-radius: 5px;
+    border: none;
+}
+
+#endScreen{
+    border: 2px solid black;
+    background-color: red;
+    border-radius: 10px;
+    display: none;
+    width: 300px;
+    height: 140px;
+    position: absolute;
+    top:35%;
+    left:42%
+}
+
+#gameOver{
+    text-align: center;
+    font-size: 30px;
+    font-family: Sans-serif;
+    margin: 25 0 15 0
+}
+
+#score{
+    text-align: center;
+    font-size: 25px;
+    font-family: Sans-serif;
+    margin: 0;
+}
+
+
+#shipInfoContainer{
+    display: inline-block;
+    background-image: url("ship info/shipdInformationBar.png");
+    background-size: 100%;
+    width: 193px;
+    height: 125px;
+}
+
+#bullets{
+    right: 935px;
+    top: 26px;
+    font-size: 22px;
+    font-family: Sans-serif;
+    position: absolute;
+    display: inline;
+    margin: 0;
+}
+
+#ship{
+    position: absolute;
+    top: 694px;
+    left: 910px;
+}
+
+body{
+    margin: 0;
+    background-image: url("space.gif");
+    background-size: 100%;
+}
