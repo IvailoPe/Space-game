@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   animation = window.requestAnimationFrame(runningGame)
+  resizeBasedOnScreen()
   switchShipSpaceView()
   switchEnemyPositions()
 })
@@ -46,10 +47,24 @@ let arrWithFramesForShip = [
   "starsFromShipF3.png"
 ]
 
+function resizeBasedOnScreen() {
+  let windowIlussion = document.querySelector("#gameIlussion")
+  let bottomInfoContainer = document.querySelector("#bottomInfoContainer")
+  let ship = document.querySelector(`#ship`)
+  let windowWidth = window.innerWidth
+  let windowHeigh = window.innerHeight
+  windowIlussion.style.width = windowWidth + "px"
+  windowIlussion.style.height = windowHeigh + "px"
+  bottomInfoContainer.style.top = windowIlussion.getBoundingClientRect().bottom - 130 + "px"   //windowHeigh - 130 + "px"
+  bottomInfoContainer.style.left = windowIlussion.getBoundingClientRect().width / 2 - 943 + "px"
+  ship.style.left = windowIlussion.getBoundingClientRect().width / 2 - 54 + "px"
+  ship.style.top = window.innerHeight - 240 + "px"
+}
+
 function switchEnemyPositions() {
   setInterval(() => {
     leftOrRight = Math.floor(Math.random() * 2)
-    willMove = parseInt(Math.floor(Math.random() * 10)) 
+    willMove = parseInt(Math.floor(Math.random() * 10))
   }, 2000)
 }
 
@@ -118,8 +133,8 @@ let leftOrRight = Math.floor(Math.random() * 2)
 let willMove = parseInt(Math.floor(Math.random() * 10))
 
 function runningGame(timeSpan) {
-  addMeteors()
-  addEnemeyShips()
+   addMeteors()
+   addEnemeyShips()
   if (movement.a) {
     ship.src = "/shipPictures/shipLeftTurn.png"
   }
@@ -168,12 +183,12 @@ function runningGame(timeSpan) {
     enemyLasers.forEach((laser, i) => {
       let cordinatesOfCurrentLaser = laser.getBoundingClientRect()
       let cordinatesOfShip = ship.getBoundingClientRect()
-      if (cordinatesOfCurrentLaser.top >= 774) {
+      if (cordinatesOfCurrentLaser.top >= window.innerHeight - 240) {
         laser.remove()
         enemyLasers.splice(i, 1)
       }
       else {
-        laser.style.top = cordinatesOfCurrentLaser.top + 12.5 + "px" 
+        laser.style.top = cordinatesOfCurrentLaser.top + 12.5 + "px"
         if (cordinatesOfCurrentLaser.top + 30 >= cordinatesOfShip.top &&
           cordinatesOfCurrentLaser.left >= cordinatesOfShip.left &&
           cordinatesOfCurrentLaser.left <= cordinatesOfShip.right
@@ -240,7 +255,7 @@ function runningGame(timeSpan) {
   }
   if (meteors.length) {
     meteors.forEach((meteor, i) => {
-      if (meteor.meteor.getBoundingClientRect().top === 694) {
+      if (meteor.meteor.getBoundingClientRect().top >= window.innerHeight - 240) {
         meteor.meteor.remove()
         meteors.splice(i, 1)
       }
@@ -269,7 +284,7 @@ function runningGame(timeSpan) {
           document.querySelector("#endScreen").style.display = "inline-block"
           document.querySelector("#score").textContent = `Score: ${playerScore}`
           throw "Game over"
-         
+
         }
         meteor.meteor.remove()
         meteors.splice(i, 1)
@@ -306,7 +321,7 @@ function runningGame(timeSpan) {
     }
   }
   if (movement.s) {
-    if (ship.getBoundingClientRect().top < 695) {
+    if (ship.getBoundingClientRect().top < window.innerHeight - 240 ) {
       ship.style.top = ship.getBoundingClientRect().top + 2 + "px"
     }
   }

@@ -1,13 +1,6 @@
 #bottomInfoContainer{
-    width: 1920px;
-    height: 130px;
     position: absolute;
-    top: 801px;
     background-color: black;
-}
-
-[alt="shipView"]{
-    margin: 0px 9.7px 0px 9.7px;
 }
 
 #endScreen button{
@@ -44,12 +37,19 @@
     margin: 0;
 }
 
+#gameIlussion{
+    width: 1920px ;  
+    height: 1080px;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    position: absolute;
+}
 
 #shipInfoContainer{
     display: inline-block;
     background-image: url("shipInfo/shipdInformationBar.png");
     background-size: 100%;
-    width: 193px;
+    width: 193px;  
     height: 125px;
 }
 
