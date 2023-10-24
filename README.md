@@ -4,6 +4,7 @@ In this space game friendly ship(player) navigates amidst falling asteroids and 
 You can try the game <a href="https://space-game.ivailopietkov1.repl.co">here</a>
 
 pictures from the game:
+
 ![picOfGame1](https://github.com/IvailoPe/Space-game/assets/123314052/566fa0d3-c2d2-4d10-8e25-b0bbefb86b01)
 ![picOfGame2](https://github.com/IvailoPe/Space-game/assets/123314052/99579fa7-a56b-45f3-bd2c-a7098a5310aa)
 ![picOfGame3](https://github.com/IvailoPe/Space-game/assets/123314052/72045804-e638-403e-b97e-99c51970589a)
