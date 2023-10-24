@@ -1,7 +1,7 @@
 # Space-game
 In this space game friendly ship(player) navigates amidst falling asteroids and hostile ships. The objective is to destroy enemy ships while either dodging or eliminating asteroids. When the game ends the player can view their score and they have the option to restart the game. The player can move with the keys w(up), a(left), s(down), d(right) and can shoot with the space bar. (Hostile ships may try to dodge your lasers)
 
-(game might/will brake if you zoom in or out(use chrome) and is made for 1920/1040)
+(game should work okay with resolution innerHeight - 931, innerWidth - 1920 and eveyrthing above that)
 
 You can try the game <a href="https://space-game.ivailopietkov1.repl.co">here</a>
 
