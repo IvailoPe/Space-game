@@ -260,10 +260,10 @@ function runningGame(timeSpan) {
         let currecntPic = window.getComputedStyle(shipHealthInfo, null).backgroundImage.split(`"`)[1].split("/")[4]
 
         if (currecntPic === "shipdInformationBar.png") {
-          shipHealthInfo.style.backgroundImage = `url('ship info/shipInformationMinus1Health.png')`
+          shipHealthInfo.style.backgroundImage = `url('shipInfo/shipInformationMinus1Health.png')`
         }
         else if (currecntPic === "shipInformationMinus1Health.png") {
-          shipHealthInfo.style.backgroundImage = `url('ship info/shipInformationMinus2Health.png')`
+          shipHealthInfo.style.backgroundImage = `url('shipInfo/shipInformationMinus2Health.png')`
         }
         else if (currecntPic === "shipInformationMinus2Health.png") {
           document.querySelector("#endScreen").style.display = "inline-block"
